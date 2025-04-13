@@ -1,5 +1,5 @@
 /**
- * Configuration settings for the LaTeX Equation Renderer
+ * Configuration settings for the LaTeX Editor
  */
 const CONFIG = {
     // API endpoints
@@ -9,7 +9,9 @@ const CONFIG = {
         // Endpoints for different operations
         ENDPOINTS: {
             EXPAND: '/expand',
-            FACTOR: '/factor'
+            FACTOR: '/factor',
+            INTEGRATE: '/integrate',
+            DIFF: '/diff'
         }
     },
     

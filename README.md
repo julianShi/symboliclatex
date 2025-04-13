@@ -1,22 +1,59 @@
-# LaTeX Equation Renderer
+# LaTeX Editor and Calculator
 
-A real-time LaTeX equation editor and renderer with expansion and factoring capabilities. This web application allows users to write LaTeX equations and see them rendered instantly, with additional features for manipulating mathematical expressions.
+A web-based application for editing and calculating LaTeX equations in real-time.
 
 ## Features
 
-- 🔄 Real-time LaTeX rendering using MathJax
-- ➕ Multiple equation editors support
-- ⌨️ Keyboard shortcuts (⌘+Enter or Ctrl+Enter to add new equations)
-- 🧮 Mathematical operations:
-  - Expand expressions
-  - Factor expressions
-- 📋 Copy LaTeX to clipboard
-- 🎨 Clean, responsive interface
-- ⚙️ Configurable settings
+### LaTeX Editor
+- Real-time equation editing with MathQuill
+- Dual-side equation editing (left and right sides)
+- Add new rows with Shift+Enter
+- Copy current row with Command+Enter
+- Delete rows with the delete icon
+- Keyboard navigation between fields
 
-![latex-render-demo](resource/latex-render-demo.png)
+### LaTeX Calculator
+- Real-time equation calculation
+- Support for basic arithmetic operations
+- Trigonometric functions
+- Logarithms and exponentials
+- Matrix operations
+- Vector operations
 
 ## Usage
+
+### LaTeX Editor
+1. Type equations in the left or right math field
+2. Use Shift+Enter to add a new row
+3. Use Command+Enter to copy the current row
+4. Click the delete icon to remove a row
+5. Navigate between fields using Tab and Shift+Tab
+
+### LaTeX Calculator
+1. Enter your equation in the input field
+2. The result will be displayed in real-time
+3. Use the keyboard or click the buttons to input mathematical symbols
+
+## Examples
+
+### LaTeX Editor
+- Quadratic equation: `ax^2 + bx + c = 0`
+- Matrix multiplication: `\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} ax + by \\ cx + dy \end{pmatrix}`
+
+### LaTeX Calculator
+- Basic arithmetic: `2 + 2 = 4`
+- Trigonometric functions: `\sin(\pi/2) = 1`
+- Logarithms: `\log_2(8) = 3`
+
+## Troubleshooting
+
+- If equations don't render, check your LaTeX syntax
+- For calculation errors, ensure your equation is well-formed
+- If the server is not responding, check that it's running on port 5000
+
+## Acknowledgments
+
+- MathQuill for the equation editor
 
 ## Http Server Prerequisite
 
@@ -52,37 +89,6 @@ which returns
 }
 ```
 
-
-
-### Basic Operations
-
-1. **Adding Equations**:
-   - Click the "Add New Equation" button
-   - Use keyboard shortcut ⌘+Enter (Mac) or Ctrl+Enter (Windows/Linux)
-
-2. **Writing Equations**:
-   - Enter LaTeX code in the text area
-   - See real-time rendering in the output area
-
-3. **Manipulating Equations**:
-   - Click "Expand" to expand mathematical expressions
-   - Click "Factor" to factor expressions
-   - Click "Copy LaTeX" to copy the equation to clipboard
-   - Click "Delete" to remove an equation editor
-
-### Example LaTeX Equations
-
-```latex
-# Simple polynomial
-(x+1)(x+2)
-
-# Quadratic formula
-\frac{-b \pm \sqrt{b^2-4ac}}{2a}
-
-# Integral
-\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
-```
-
 ## Configuration
 
 The application can be configured through `config.js`:
@@ -103,22 +109,6 @@ const CONFIG = {
 };
 ```
 
-## Troubleshooting
-
-1. **Server Connection Issues**:
-   - Ensure the Flask server is running
-   - Check if the port (default: 5000) is available
-   - Verify the API base URL in `config.js`
-
-2. **Rendering Problems**:
-   - Check browser console for MathJax errors
-   - Verify LaTeX syntax
-   - Clear browser cache if needed
-
-3. **CORS Issues**:
-   - Check CORS settings in `.env`
-   - Verify the server's CORS configuration
-
 ## Contributing
 
 1. Fork the repository
@@ -129,10 +119,4 @@ const CONFIG = {
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- [MathJax](https://www.mathjax.org/) for LaTeX rendering
-- [Flask](https://flask.palletsprojects.com/) for the backend server
-- [SymPy](https://www.sympy.org/) for mathematical operations 
+This project is licensed under the MIT License - see the LICENSE file for details. 
